@@ -1,0 +1,435 @@
+{
+  "defaultAction": "SCMP_ACT_ERRNO",
+  "defaultErrnoRet": 1,
+  "archMap": [
+    {
+      "architecture": "SCMP_ARCH_X86_64",
+      "subArchitectures": [
+        "SCMP_ARCH_X86",
+        "SCMP_ARCH_X32"
+      ]
+    },
+    {
+      "architecture": "SCMP_ARCH_AARCH64",
+      "subArchitectures": [
+        "SCMP_ARCH_ARM"
+      ]
+    },
+    {
+      "architecture": "SCMP_ARCH_MIPS64",
+      "subArchitectures": [
+        "SCMP_ARCH_MIPS",
+        "SCMP_ARCH_MIPS64N32"
+      ]
+    },
+    {
+      "architecture": "SCMP_ARCH_MIPS64N32",
+      "subArchitectures": [
+        "SCMP_ARCH_MIPS",
+        "SCMP_ARCH_MIPS64"
+      ]
+    },
+    {
+      "architecture": "SCMP_ARCH_MIPSEL64",
+      "subArchitectures": [
+        "SCMP_ARCH_MIPSEL",
+        "SCMP_ARCH_MIPSEL64N32"
+      ]
+    },
+    {
+      "architecture": "SCMP_ARCH_MIPSEL64N32",
+      "subArchitectures": [
+        "SCMP_ARCH_MIPSEL",
+        "SCMP_ARCH_MIPSEL64"
+      ]
+    },
+    {
+      "architecture": "SCMP_ARCH_S390X",
+      "subArchitectures": [
+        "SCMP_ARCH_S390"
+      ]
+    },
+    {
+      "architecture": "SCMP_ARCH_RISCV64",
+      "subArchitectures": null
+    }
+  ],
+  "syscalls": [
+    {
+      "names": [
+        "accept4",
+        "bind",
+        "capget",
+        "capset",
+        "chdir",
+        "close",
+        "execve",
+        "exit",
+        "fcntl",
+        "fstat",
+        "fstatfs",
+        "futex",
+        "getcwd",
+        "getdents64",
+        "getppid",
+        "getsockname",
+        "ioctl",
+        "listen",
+        "lseek",
+        "mmap",
+        "mprotect",
+        "newfstatat",
+        "open",
+        "openat",
+        "poll",
+        "prctl",
+        "read",
+        "readlink",
+        "recvfrom",
+        "rt_sigsuspend",
+        "rt_tgsigqueueinfo",
+        "sched_setattr",
+        "semtimedop_time64",
+        "sendfile64",
+        "sendto",
+        "setfsgid",
+        "setgid",
+        "setgid32",
+        "setgroups",
+        "setsid",
+        "setsockopt",
+        "setuid",
+        "stat",
+        "statfs64",
+        "timerfd_gettime",
+        "truncate64",
+        "uname",
+        "write"
+      ],
+      "action": "SCMP_ACT_ALLOW"
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "minKernel": "4.8"
+      }
+    },
+    {
+      "names": [
+        "socket"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 40,
+          "op": "SCMP_CMP_NE"
+        }
+      ]
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 0,
+          "op": "SCMP_CMP_EQ"
+        }
+      ]
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 8,
+          "op": "SCMP_CMP_EQ"
+        }
+      ]
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 131072,
+          "op": "SCMP_CMP_EQ"
+        }
+      ]
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 131080,
+          "op": "SCMP_CMP_EQ"
+        }
+      ]
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 4294967295,
+          "op": "SCMP_CMP_EQ"
+        }
+      ]
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "arches": [
+          "ppc64le"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "arches": [
+          "arm",
+          "arm64"
+        ]
+      }
+    },
+    {
+      "names": [
+        "arch_prctl"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "arches": [
+          "amd64",
+          "x32"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "arches": [
+          "amd64",
+          "x32",
+          "x86"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "arches": [
+          "s390",
+          "s390x"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "arches": [
+          "riscv64"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_DAC_READ_SEARCH"
+        ]
+      }
+    },
+    {
+      "names": [
+        "clone",
+        "umount",
+        "umount2"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_ADMIN"
+        ]
+      }
+    },
+    {
+      "names": [
+        "clone"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 2114060288,
+          "op": "SCMP_CMP_MASKED_EQ"
+        }
+      ],
+      "excludes": {
+        "caps": [
+          "CAP_SYS_ADMIN"
+        ],
+        "arches": [
+          "s390",
+          "s390x"
+        ]
+      }
+    },
+    {
+      "names": [
+        "clone"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 1,
+          "value": 2114060288,
+          "op": "SCMP_CMP_MASKED_EQ"
+        }
+      ],
+      "comment": "s390 parameter ordering for clone is different",
+      "includes": {
+        "arches": [
+          "s390",
+          "s390x"
+        ]
+      },
+      "excludes": {
+        "caps": [
+          "CAP_SYS_ADMIN"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ERRNO",
+      "errnoRet": 38,
+      "excludes": {
+        "caps": [
+          "CAP_SYS_ADMIN"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_BOOT"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_CHROOT"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_MODULE"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_PACCT"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_PTRACE"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_RAWIO"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_TIME"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_TTY_CONFIG"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYS_NICE"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_SYSLOG"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_BPF"
+        ]
+      }
+    },
+    {
+      "names": [],
+      "action": "SCMP_ACT_ALLOW",
+      "includes": {
+        "caps": [
+          "CAP_PERFMON"
+        ]
+      }
+    }
+  ]
+}
