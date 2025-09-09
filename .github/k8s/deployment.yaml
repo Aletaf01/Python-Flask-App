@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: flaskapp12.azurecr.io/flask:0.0.3   # <-- immagine dal tuo ACR
+          image: flaskapp12.azurecr.io/flask 
           ports:
             - containerPort: 5000
           resources:
